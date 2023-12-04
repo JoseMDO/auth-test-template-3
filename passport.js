@@ -8,12 +8,11 @@ const passport = require('passport')
 
 
 // TYPE YOUR CLIENT ID'S AND SECRET ID'S HERE. AFTER THAT YOU CAN UNCOMMENT AND PUSH TO GITHUB. 
+const GOOGLE_CLIENT_ID = "72103332887-upik5p08qtg2cggbb8u1auj9s0d470tt.apps.googleusercontent.com"
+const GOOGLE_CLIENT_SECRET = "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"
 
-// const GOOGLE_CLIENT_ID = "20848....."
-// const GOOGLE_CLIENT_SECRET = "GOCSP...."
-
-// const GITHUB_CLIENT_ID = "2fb17...."
-// const GITHUB_CLIENT_SECRET = "3be2e2...."
+const GITHUB_CLIENT_ID = "2fb171dce9bfc15384f4"
+const GITHUB_CLIENT_SECRET = "5047bd5725be274779810a625177fcee656c68f9"
 
 
 passport.use(new GoogleStrategy({
