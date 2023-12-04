@@ -16,32 +16,32 @@ const passport = require('passport')
 // const GITHUB_CLIENT_SECRET = "3be2e2...."
 
 
-// passport.use(new GoogleStrategy({
-//     clientID: GOOGLE_CLIENT_ID,
-//     clientSecret: GOOGLE_CLIENT_SECRET,
-//     callbackURL: "/auth/google/callback"
-//   },
-//   function(accessToken, refreshToken, profile, done, /* done */) {
-//     //IF YOU WANT TO USE A DATABASE TO STORE USERS, USE THIS CODE 
-//     // User.findOrCreate({ googleId: profile.id }, function (err, user) {
-//     //   return cb(err, user);
-//     // });
-//     console.log(profile)
-//     done(null, profile)
-//   }
-// ));
+passport.use(new GoogleStrategy({
+    clientID: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    callbackURL: "/auth/google/callback"
+  },
+  function(accessToken, refreshToken, profile, done, /* done */) {
+    //IF YOU WANT TO USE A DATABASE TO STORE USERS, USE THIS CODE 
+    // User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    //   return cb(err, user);
+    // });
+    console.log(profile)
+    done(null, profile)
+  }
+));
 
 
-// passport.use(new GitHubStrategy({
-//     clientID: GITHUB_CLIENT_ID,
-//     clientSecret: GITHUB_CLIENT_SECRET,
-//     callbackURL: "/auth/github/callback"
-//   },
-//   function(accessToken, refreshToken, profile, done) {
-//     console.log(profile)
-//     done(null, profile)
-//   }
-// ));
+passport.use(new GitHubStrategy({
+    clientID: GITHUB_CLIENT_ID,
+    clientSecret: GITHUB_CLIENT_SECRET,
+    callbackURL: "/auth/github/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    console.log(profile)
+    done(null, profile)
+  }
+));
 
 
 passport.serializeUser((user, done) => {
